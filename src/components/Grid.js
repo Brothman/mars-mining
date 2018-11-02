@@ -13,12 +13,17 @@ class Grid extends React.Component {
         this.state = { 
             nodes: [],
             bots: [],
-         }
+            grid: [
+                    []
+                  ],
+         };
     }
 
     componentDidMount() {
-        this.paint();
-        this.start();
+        //firstPaint calls start
+        this.firstPaint();
+
+        //REMEMBER TO FACTOR IN DOWNTIME FOR DATA
     }
 
     /**
@@ -105,25 +110,62 @@ class Grid extends React.Component {
 /** App functions */
 
 /**
- * Draws all the cells to the DOM. Adds an appropriate color class depending on whether this grid cell
+ * Changes the colors of the cells. The method adds an appropriate color class 
+ * depending on whether this grid cell
  * contains a mineral node, a bot, or both.
  */
  paint = () => {
-    const grid = document.querySelector(".grid");
-    while (grid.firstChild) {
-        grid.removeChild(grid.firstChild);
-    }
+
+     const grid = this.state.grid;
 
     for (let i = 0; i < GRID_ROWS; i++) {
         for (let j = 0; j < GRID_COLS; j++) {
-            let template = document.getElementsByTagName("template")[0];
+            // let template = document.getElementsByTagName("template")[0];
             
-            let cell = template.firstElementChild.cloneNode(true);
-            cell.classList.add(this.colorClass(i, j));
-            grid.appendChild(cell);
+            let cell = grid[i][j];
+            //should affect the DOM directly
+            cell.className = "cell " + this.colorClass(i, j);
+            
         }
     }
 }
+
+/**
+ * Draws all the cells to the DOM. This is the only time we create cells.
+ * Adds all the cell DOM nodes into a STATE-based grid 2d-array
+ */
+    firstPaint = () => {
+        const grid = document.querySelector(".grid");
+        while (grid.firstChild) {
+            grid.removeChild(grid.firstChild);
+        }
+
+        const stateGrid = this.state.grid;
+
+        for (let i = 0; i < GRID_ROWS; i++) {
+            for (let j = 0; j < GRID_COLS; j++) {
+                let template = document.getElementsByTagName("template")[0];
+
+                let cell = template.firstElementChild.cloneNode(true);
+                cell.classList.add(this.colorClass(i, j));
+
+                grid.appendChild(cell);
+                
+                let row = stateGrid[i];
+                //initialize array for new row
+                if (row === undefined) {
+                    stateGrid[i] = [cell];
+                }
+                else {
+                    stateGrid[i][j] = cell;
+                }
+            }
+        }
+
+        this.setState( {
+            grid: stateGrid,
+        }, () => this.start());
+    }
 
 /**
  * Main run loop. Every 1s, fetch nodes and bots and re-paint everything.
