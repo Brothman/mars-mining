@@ -84,6 +84,10 @@ class Grid extends React.Component {
 
         let botPresent = bots[x] && bots[x][y];
 
+        if (nodePresent && botPresent) { // Node present
+            return 'purple';
+        }
+
         if (nodePresent) { // Node present
             return 'blue';
         }
@@ -91,11 +95,9 @@ class Grid extends React.Component {
         if (botPresent) { // Node present
             return 'red';
         }
-
-        if (!nodePresent) { // Empty
+        else { // Empty
             return 'white';
         }
-
     }
 
 
