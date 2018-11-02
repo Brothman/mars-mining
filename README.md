@@ -1,44 +1,99 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Mars Mining
 
-## Available Scripts
+<h1 align="center" font-size="80"> Mars Mining </h1>
+<p align="center">
+  <a href="http://www.mars-mining.herokuapp.com">
+    <img alt="Mars Mining Logo" src="https://s3.us-east-2.amazonaws.com/mars-mining/mars-mining.jpeg" />
+  </a>
+</p>
 
-In the project directory, you can run:
+<p align="center">
+Mars Mining is a Create React App that displays the location of bots and mining nodes on a grid. Mars Mining is a front-end Application that retrieves its data from an endpoint provided by Headlight Talent Agency.
+</p>
 
-### `npm start`
+<p align="center">
+  Mars Mining is the creation of <a href="https://www.linkedin.com/in/brothman7000" > Benji Rothman. </a> 
+</p>
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## Access
+You can [access](http://www.mars-mining.herokuapp.com) the web application at <http://www.mars-mining.herokuapp.com>
 
-### `npm test`
+## Functionality
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Does it display bots and nodes correctly? Do bots update in roughly real-time? Are nodes displayed? If you’ve made any other functionality choices (e.g. adding a new feature or simplifying something), how well are they implemented?
 
-### `npm run build`
+#### Functionality 1
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Text.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+#### Functionality 2
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Text.
 
-### `npm run eject`
+#### Functionality 3
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Text.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## User Interface
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+How did you implement the user interface? Is it clear how to tell bots from nodes? Is it presented in a way you’d be comfortable sharing informally with co-workers? Are there any interesting choices taken?
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+#### User Interface 1
 
-## Learn More
+Text.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### User Interface 2
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Text.
+
+#### User Interface 3
+
+Text.
+
+## Communication 
+
+Is your write-up meaningful and clear? Can we have a pretty good idea of what your code looks like based on the write-up alone? Can we tell why you made the decisions that you did? If you got stuck, is it clear what you got stuck on? Are there comments in the code?
+
+#### Communication 1
+
+Text.
+
+#### Communication 2
+
+Text.
+
+#### Communication 3
+
+Text.
+
+## Extensibility and Future Features
+
+How hard would it be to change your implementation if conditions changed? For example, if the grid was 100x100 instead of 20x20, how hard would that be to implement? What if bots could stack on top of each other? What if we wanted to add one of the “Going further” features - how hard would that be?
+
+#### Feature 1
+
+Text.
+
+#### Feature 2
+
+Text.
+
+#### Feature 3
+
+Text.
+
+## How to Use
+
+1. Visit the website at http://www.mars-mining.herokuapp.com!
+2. Enjoy the beautiful colors! 
+
+## Credits
+
+This software uses code from several open source packages, including the following:
+
+* [React](https://github.com/facebook/react)
+
+* [Create-React-App](https://github.com/facebook/create-react-app)
+
+* [Axios](https://github.com/axios/axios)
