@@ -17,6 +17,20 @@ Mars Mining is a Create React App that displays the location of bots and mining 
 ## Access
 You can [access](http://www.mars-mining.herokuapp.com) the web application at <http://www.mars-mining.herokuapp.com>
 
+## My approach
+
+I went with a vanilla JavaScript approach because it seemed like the fastest way to get started. I like to start simply
+and make things more complicated over time.
+
+I started out by...
+
+## Tradeoffs I made
+
+I decided to do X because it seemed like the fastest way to get going, and time was a factor obviously.
+
+Though Framework Z is popular, I decided not to use it because I didn't feel like I was familiar enough to implement
+everything in time.
+
 ## Functionality
 
 Does it display bots and nodes correctly? Do bots update in roughly real-time? Are nodes displayed? If you’ve made any other functionality choices (e.g. adding a new feature or simplifying something), how well are they implemented?
