@@ -1,5 +1,3 @@
-# Mars Mining
-
 <h1 align="center" font-size="80"> Mars Mining </h1>
 <p align="center">
   <a href="http://www.mars-mining.herokuapp.com">
