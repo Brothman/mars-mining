@@ -33,6 +33,8 @@ Using `Create-React-App` instead of setting up my repo from scratch. (Unnecessar
 
 Rushing through coding and not re-factoring to reduce technical debt. I chose to focus on making the code work over cleaning up my code.
 
+I ran out of time and did not catch the brief power outages when the data is unacessible.
+
 ## User Interface
 
 *How did you implement the user interface? Is it clear how to tell bots from nodes? Is it presented in a way you’d be comfortable sharing informally with co-workers? Are there any interesting choices taken?*
