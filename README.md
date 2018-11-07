@@ -15,7 +15,7 @@ Mars Mining is a Create React App that displays the location of bots and mining 
 
 
 ## Access
-You can [access](http://www.mars-mining.herokuapp.com) the web application at <http://www.mars-mining.herokuapp.com>
+You can [access](http://mars-mining.herokuapp.com/) the web application at <http://mars-mining.herokuapp.com/>
 
 ## My approach
 
