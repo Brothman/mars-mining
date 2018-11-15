@@ -81,7 +81,8 @@ I might also remove the borders around each cell. I would add a background image
 ## How to Use
 
 1. Visit the website at http://www.mars-mining.herokuapp.com!
-2. Enjoy the beautiful colors! 
+2. Enjoy the beautiful colors.
+3. Celebrate!
 
 ## Credits
 
