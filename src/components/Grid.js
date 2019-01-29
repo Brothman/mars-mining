@@ -16,10 +16,14 @@ class Grid extends React.Component {
             grid: [
                     []
                   ],
+            data: {}
          };
     }
 
     componentDidMount() {
+        //create our own data because the competition is over
+        this.createData();
+
         //firstPaint calls start
         this.firstPaint();
 
@@ -30,9 +34,74 @@ class Grid extends React.Component {
  * Fetches all known information about mineral nodes, and updates
  * the state object with that node information
  */
+
+    //20 X 20 Grid
+    createData = () => {
+        const data = {
+            Nodes: [],
+            Bots: []
+        };
+
+        for (let i = 0; i < 20; i++) {
+            data.Nodes.push(
+                {
+                    Location: {
+                        X: Math.floor(Math.random() * 20),
+                        Y: Math.floor(Math.random() * 20),
+                    }
+                }
+            );
+        }
+
+        for (let i = 0; i < 20; i++) {
+            data.Bots.push(
+                {
+                    Location: {
+                        X: Math.floor(Math.random() * 20),
+                        Y: Math.floor(Math.random() * 20),
+                    }
+                }
+            );
+        }
+
+        this.setState({ data });
+
+        //we need a grid from 0 to 99.
+        /* Structured like follows
+        
+        {
+            data: {
+                Nodes: [
+                    {
+                    Location: {
+                        X: 0,
+                        Y: 0
+                     }
+                    },
+                    {
+                    Location: {
+                        X: 0,
+                        Y: 0
+                     }
+                    },
+                 ],
+                Bots: {
+                    Location: {
+                        X: 0,
+                        Y: 0
+                    }
+                }
+            }
+        }
+
+        */
+    }
+
+
     refreshNodes = async () => {
-        let result = await axios.get(NODES_URL);
-        let payload = result.data['Nodes'];
+        // let result = await axios.get(NODES_URL);
+        // let payload = result.data['Nodes'];
+        let payload = this.state.data['Nodes'];
 
         let nodes = {};
 
@@ -55,8 +124,9 @@ class Grid extends React.Component {
 * the state object with that node information
 */
     refreshBots = async () => {
-        let result = await axios.get(BOTS_URL);
-        let payload = result.data['Bots'];
+        // let result = await axios.get(BOTS_URL);
+        // let payload = result.data['Bots'];
+        let payload = this.state.data['Bots'];
 
         let bots = {};
 
@@ -68,9 +138,49 @@ class Grid extends React.Component {
             bots[bot.Location.X][bot.Location.Y] = bot;
         }
 
+        this.updateBotPosition();
+
         this.setState({
             bots,
         });
+    }
+
+    updateBotPosition = () => {
+        let bots = this.state.data['Bots'];
+
+        for (let i = 0; i < bots.length; i++) {
+            let random1 = Math.floor(Math.random() * 2);
+            let random2 = Math.floor(Math.random() * 2);
+            let direction = Math.floor(Math.random() * 2);
+            let bot = bots[i];
+
+            if (direction == 0) {
+                bot.Location.X += random1;
+                bot.Location.Y += random2;
+            }
+            else {
+                bot.Location.X -= random1;
+                bot.Location.Y -= random2;
+            }
+
+            if (bot.Location.Y < 0) {
+                bot.Location.Y += 1;
+            }
+            if (bot.Location.Y >= 20) {
+                bot.Location.Y -= 1;
+            }
+            if (bot.Location.X < 0) {
+                bot.Location.X += 1;
+            }
+            if (bot.Location.Y >= 20) {
+                bot.Location.Y -= 1;
+            }
+        }
+
+        this.setState({data: {
+            Bots: bots,
+            Nodes: this.state.data.Nodes
+        }});
     }
 
 
