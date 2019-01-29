@@ -30,11 +30,6 @@ class Grid extends React.Component {
         //REMEMBER TO FACTOR IN DOWNTIME FOR DATA
     }
 
-    /**
- * Fetches all known information about mineral nodes, and updates
- * the state object with that node information
- */
-
     //20 X 20 Grid
     createData = () => {
         const data = {
@@ -51,9 +46,7 @@ class Grid extends React.Component {
                     }
                 }
             );
-        }
 
-        for (let i = 0; i < 20; i++) {
             data.Bots.push(
                 {
                     Location: {
@@ -63,7 +56,6 @@ class Grid extends React.Component {
                 }
             );
         }
-
         this.setState({ data });
 
         //we need a grid from 0 to 99.
@@ -96,6 +88,11 @@ class Grid extends React.Component {
 
         */
     }
+
+        /**
+     * Fetches all known information about mineral nodes, and updates
+     * the state object with that node information
+     */
 
 
     refreshNodes = async () => {
